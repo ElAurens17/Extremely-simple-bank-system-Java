@@ -3,7 +3,6 @@ import java.util.Scanner;
 public class bank {
     int balance;
     int AmountToWithdraw;
-    int donation;
 
     public void deposit(int x) {
         balance = x;
@@ -13,16 +12,12 @@ public class bank {
         AmountToWithdraw = balance - y;
     }
 
-    public void donateToPoor(int p) {
-        donation = AmountToWithdraw - p;
-    }
-
     public static void main(String[] args) throws Exception {
         bank car = new bank();
 
         Scanner z = new Scanner(System.in); // Create a Scanner object
         System.out.println("How much would you like to deposit?");
-
+        
         int hehe = z.nextInt(); // Read user input
         System.out.println("Deposit is: " + hehe); // Output user input
 
@@ -37,14 +32,5 @@ public class bank {
 
         car.withdraw(huhu);
         System.out.println("Total Amount: " + car.AmountToWithdraw);
-
-        Scanner m = new Scanner(System.in); // Create a Scanner object
-        System.out.println("How much would you like to donate?");
-
-        int he = m.nextInt(); // Read user input
-        System.out.println("Donation is: " + he); // Output user input
-
-        car.donateToPoor(he);
-        System.out.println("Total Amount: " + car.donation);
     }
 }
